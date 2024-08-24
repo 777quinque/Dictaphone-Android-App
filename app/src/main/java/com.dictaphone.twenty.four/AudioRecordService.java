@@ -40,7 +40,8 @@ public class AudioRecordService extends Service {
         wakeLock.acquire();
 
         startRecording();
-        return START_STICKY;
+
+        return START_REDELIVER_INTENT; // Перезапуск сервиса с тем же Intent при необходимости
     }
 
     private void startRecording() {
@@ -68,7 +69,8 @@ public class AudioRecordService extends Service {
         NotificationChannel channel = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             channel = new NotificationChannel("RecordServiceChannel", "Record Service Channel",
-                    NotificationManager.IMPORTANCE_DEFAULT);
+                    NotificationManager.IMPORTANCE_LOW);
+            channel.setSound(null, null);
         }
         NotificationManager manager = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -81,7 +83,8 @@ public class AudioRecordService extends Service {
         return new NotificationCompat.Builder(this, "RecordServiceChannel")
                 .setContentTitle("Recording Audio")
                 .setContentText("Recording in progress...")
-                .setSmallIcon(R.drawable.log)
+                .setSmallIcon(R.drawable.player_header_icon)
+                .setSound(null)  // Устанавливаем пустой звук
                 .build();
     }
 

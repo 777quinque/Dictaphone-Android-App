@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginTop="32dp"
+        android:visibility="gone"
         app:adSize="BANNER"
         app:adUnitId="ca-app-pub-3940256099942544/9214589741"
         app:layout_anchor="@+id/fragment_container"

@@ -38,6 +38,9 @@
             android:foregroundServiceType="mediaProjection"
             android:permission="android.permission.FOREGROUND_SERVICE"
             android:exported="true"/>
+        <service
+            android:name=".AudioPlaybackService"
+            android:foregroundServiceType="mediaPlayback" />
 
         <meta-data
             android:name="preloaded_fonts"
