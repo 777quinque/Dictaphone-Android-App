@@ -1,4 +1,4 @@
-Приложение "Диктафон"
+Приложение "Диктофон"
 
 ![diktofon](https://github.com/user-attachments/assets/f056e504-69a3-40f0-89bc-649ff3dcd05f)
 
